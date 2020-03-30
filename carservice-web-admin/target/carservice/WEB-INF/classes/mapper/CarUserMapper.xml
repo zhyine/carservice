@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.carservice.web.admin.dao.CarUserDao">
+    <sql id="carUserColumns">
+        a.id,
+        a.username,
+        a.password,
+        a.phone,
+        a.email,
+        a.created,
+        a.updated
+    </sql>
+
+    <select id="getByEmail" resultType="CarUser">
+        SELECT
+        <include refid="carUserColumns"/>
+        FROM
+        car_user AS a
+        WHERE
+        a.email = #{email}
+    </select>
+
+</mapper>
