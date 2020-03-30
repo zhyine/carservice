@@ -24,7 +24,7 @@ public class loginController {
     }
 
     /**
-     * 登录逻辑
+     * 登录
      *
      * @param email
      * @param password
@@ -35,6 +35,7 @@ public class loginController {
         CarUser carUser = carUserService.login(email, password);
 
         if(carUser == null) {
+            // 如果该用户不存在，则提示信息，返回login.jsp
             model.addAttribute("message","用户名或密码错误");
             return login();
         } else {

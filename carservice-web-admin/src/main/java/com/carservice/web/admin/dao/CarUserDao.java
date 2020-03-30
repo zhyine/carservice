@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CarUserDao {
     /**
-     * 登录
+     * 通过邮箱登录
      */
     public CarUser getByEmail(String email);
 }

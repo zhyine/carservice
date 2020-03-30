@@ -13,6 +13,7 @@ public class CarUserServiceImpl implements CarUserService {
     @Autowired
     private CarUserDao carUserDao;
 
+    // 登录验证
     @Override
     public CarUser login(String email,String password) {
         CarUser carUser = carUserDao.getByEmail(email);

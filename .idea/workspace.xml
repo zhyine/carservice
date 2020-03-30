@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486fef15-07fc-44f4-b951-a93e703063f7" name="Default Changelist" comment="" />
+    <list default="true" id="486fef15-07fc-44f4-b951-a93e703063f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-commons/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/mapper/CarUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/mapper/CarUserMapper.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +74,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -82,10 +94,11 @@
   <component name="ProjectId" id="1Zq2DDH5MUTXsOpZJwvnc9AlYxG" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -199,10 +212,25 @@
       <updated>1585552181745</updated>
       <workItem from="1585552183017" duration="5651000" />
       <workItem from="1585558182711" duration="385000" />
+      <workItem from="1585560020447" duration="2448000" />
+      <workItem from="1585562561177" duration="723000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

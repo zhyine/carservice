@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.carservice.web.admin.dao.CarUserDao">
+    <!-- 封装的共有sql片段 -->
     <sql id="carUserColumns">
         a.id,
         a.username,
@@ -11,6 +12,7 @@
         a.updated
     </sql>
 
+    <!-- 登录 -->
     <select id="getByEmail" resultType="CarUser">
         SELECT
         <include refid="carUserColumns"/>

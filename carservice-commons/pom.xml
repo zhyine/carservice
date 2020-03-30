@@ -13,7 +13,7 @@
   <groupId>carservice</groupId>
   <artifactId>carservice-commons</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
