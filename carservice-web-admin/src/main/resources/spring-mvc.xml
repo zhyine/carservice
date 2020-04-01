@@ -29,20 +29,20 @@
     <!--静态资源映射-->
     <mvc:resources mapping="/static/**" location="/static/" cache-period="3153600" />
 
-<!--    &lt;!&ndash;拦截器配置&ndash;&gt;-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            <mvc:exclude-mapping path="/login"/>-->
-<!--            <mvc:exclude-mapping path="/static/**"/>-->
-<!--            <bean class="com.carservice.web.admin.web.interceptor.LoginInterceptor" />-->
-<!--        </mvc:interceptor>-->
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <bean class="com.carservice.web.admin.web.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
 
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            <bean class="com.carservice.web.admin.web.interceptor.PermissionInterceptor" />-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.carservice.web.admin.web.interceptor.PermissionInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!--上传文件拦截-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

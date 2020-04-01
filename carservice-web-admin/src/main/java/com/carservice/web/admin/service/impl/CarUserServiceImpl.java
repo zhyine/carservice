@@ -1,11 +1,17 @@
 package com.carservice.web.admin.service.impl;
 
+import com.carservice.commons.dto.BaseResult;
+import com.carservice.commons.dto.PageInfo;
 import com.carservice.domain.CarUser;
 import com.carservice.web.admin.dao.CarUserDao;
 import com.carservice.web.admin.service.CarUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class CarUserServiceImpl implements CarUserService {
@@ -26,5 +32,65 @@ public class CarUserServiceImpl implements CarUserService {
             }
         }
         return null;
+    }
+
+    //查询全部信息
+    @Override
+    public List<CarUser> selectAll() {
+        return carUserDao.selectAll();
+    }
+
+    //根据id来获取信息
+    @Override
+    public CarUser getById(Long id) {
+        return carUserDao.getById(id);
+    }
+
+    //保存用户信息
+    @Override
+    public BaseResult save(CarUser carUser) {
+        return null;
+    }
+
+    //删除用户信息
+    @Override
+    public void delete(Long id) {
+        carUserDao.delete(id);
+    }
+
+    //更新用户信息
+    @Override
+    public void update(CarUser carUser) {
+        carUserDao.update(carUser);
+    }
+
+    //批量删除
+    @Override
+    public void deleteMulti(String[] ids) {
+        carUserDao.deleteMulti(ids);
+    }
+
+    //分页
+    @Override
+    public PageInfo<CarUser> page(int start, int length, int draw, CarUser carUser) {
+        int count = carUserDao.count(carUser);
+        Map<String,Object> params = new HashMap<>();
+        params.put("start",start);
+        params.put("length",length);
+        params.put("carUser",carUser);
+
+        PageInfo<CarUser> pageInfo = new PageInfo<>();
+        pageInfo.setDraw(draw);
+        pageInfo.setRecordsTotal(count);
+        pageInfo.setRecordsFiltered(count);
+        pageInfo.setData(carUserDao.page(params));
+
+        return pageInfo;
+    }
+
+    //查询总量
+    @Override
+    public int count(CarUser carUser) {
+        return carUserDao.count(carUser);
     }
 }

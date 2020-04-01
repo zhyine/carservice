@@ -41,7 +41,7 @@ Java版本：1.8<br>
 
 #### 1：各模块之间的关系
 
-- `dependencies`模块管理所有模块的依赖，所以无论是`commons`,`domain`，`admin`，`api`，`ui`模块都需要继承于`dependencies`模块。所以在除了`dependencies`模块外的所有模块的`pom`都需要制定父类`pom`文件。
+- `dependencies`模块管理所有模块的依赖，所以无论是`commons`,`domain`，`admin`，`api`，`ui`模块都需要继承于`dependencies`模块。所以在除了`dependencies`模块外的所有模块的`pom`都需要继承父类`pom`文件。
 - <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172543.png" style="zoom:50%;" />
 - 因为`commons`，`domain`模块，里面封装了一些工具类，工具类在其他模块中需要被调用，所以我们应该把这两个模块打包成`jar`然后把`jar`包根据需要引入`admin`，`api`，`ui`模块。
 - <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172940.png" style="zoom: 50%;" />![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330173020.png)
@@ -103,3 +103,100 @@ Java版本：1.8<br>
 - <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330181454.png" style="zoom:33%;" />
 
 - 所以页面需要用`jstl`表达式来判断：后端（Controller层）传回页面的那个值（message）是否为空，不为空的情况下，显示警告信息。
+
+> 2020/4/3
+
+#### 后端-用户模块-显示用户信息
+
+> 对于这种的管理员端页面，每个页面共同的组件是——侧边栏(menu)，导航栏(nav)，版权信息(cpoyright)。
+>
+> 内容(content)针对于不同的页面显示的内容不同
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401113222.png)
+
+> 所以，我将**侧边栏(menu)，导航栏(nav)，版权信息(copyright)**这三个共有的全部封装了起来
+>
+> 在每个页面只需要用`jsp:include`语法来在固定位置引入**includes文件夹下的对应jsp文件**即可。
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401113656.png" style="zoom:50%;" />
+
+> 接下来我们来考虑用户管理页面需要显示那些信息，并且对应的管理员需要哪些操作来管理用户。
+>
+> 我这里想到的有：
+>
+> - 首先，需要**展示用户的信息**。这里的信息包括了`id`，`用户名`，`手机号`，`邮箱`，`最后一次的更新时间`
+> - 然后对于管理员来说，最起码需要**增加用户，删除用户，修改用户信息**
+> - 由于页面只显示了用户的**部分信息**，所以我们应该能让管理员查看到用户的全部信息
+> - 对于用户量日渐增多的问题，所以我们需要增加一个搜索来以便快速定位
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401114333.png)
+
+> 用户信息的展示页面是**user_list.jsp**页面。（这个页面也是和之前**登录页面**一样，一点一点把`AdminLTE`的代码挪过来）。最开始写的时候**先不要分页**，因为最开始可能分页会造成逻辑混乱，代码过于混乱。
+>
+> 先尝试看数据库的信息能否获取到。
+>
+> 这个时候我们要把数据库的信息一大部分展示在页面上，所以**由数据库传回前端的应该是实例，然后前端来选择显示需要展示的内容**
+
+> - 1：考虑到我们需要获取数据库的大部分信息，所以，我们现在`Dao`层来写接口（这时候后端获取的是很多用户的信息，所以我们应该把每个实例都放入列表中）
+
+
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401115024.png" style="zoom:50%;" />
+
+> 2：我们去对应的**Mapper文件下**写**SQl语句**
+>
+> 因为，接下来的这个**Mapper文件下**会查询很多信息，所以我先把需要查询的信息封装成**sql片段**
+>
+> 在接下来的**sql语句中**根据需要来引入
+>
+> 注意：**sql片段**中的**a**需要在接下来写**sql语句**的时候都指定`car_user`表的**别名为a**
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401115305.png" style="zoom:50%;" />
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401115325.png" style="zoom:50%;" />
+
+> 3：Dao层和Mapper文件完成后，接下来写**Service层**的内容
+>
+> 我们先写**Service层的接口**，然后再写一个**实现类(实现类都在Impl下)**
+>
+> 因为**Service层**需要调用**Dao，Dao再去执行SQL语句**，所以我么需要在**Impl**下对应的ServiceImpl中自动注入一个**carUserDao**，以便让其来调用Dao对应的方法
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401115742.png" style="zoom:50%;" />
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401120010.png" style="zoom: 50%;" />
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401115845.png" style="zoom:50%;" />
+
+> 4：Service层完成之后
+>
+> 我们开始写**Controller层**的内容，**Controller层**来调用**Service层**拿到信息
+>
+> 所以我们需要先自动注入一个**carUserService**
+>
+> 这时候信息已经再Controller层来，所以我们要把信息**通过Model来加入到浏览器的Session中**
+>
+> ```java
+> // 当前端发送以一个get请求，请求的地址是最初是的http://localhost:8080+/user/list
+> // Controller层就会监听看是否有对应的，有的话就执行该方法
+> @RequestMapping(value = "list",method = RequestMethod.GET)
+> ```
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401120354.png" style="zoom:50%;" />
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401120317.png" style="zoom:50%;" />
+
+> 5：接下来，我们开始让前端能发送**/user/list**请求，并且可以获取到后端传来的信息
+>
+> 当点击用户列表的时候，发送一个**GET**请求，地址是`/user/list`，如下
+>
+> ```jsp
+>  <li><a href="/user/list"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+> ```
+>
+> 然后，Controller层传来的那个数据我们全部存在了**"carUsers"**中，对应的只需要在JSP中拿到就可以了
+>
+> 使用**c:forEach**这个`jstl`表达式，来循环将对应的值填入。**items=￥{carUsers}**拿到信息，**var="carUser"**表示我用carUser来代替carUSers。
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401120955.png)
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401114727.png)

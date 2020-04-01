@@ -16,7 +16,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="/static/assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/v2-2afb9f6c107dd0d378fc058c87e0961a.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>${user.email}</p>
