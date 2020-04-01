@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -75,6 +76,25 @@ public class UserController {
         return "user_detail";
     }
 
+    /**
+     * 保存用户信息
+     * @param carUser
+     * @param model
+     * @param redirectAttributes
+     * @return
+     */
+    @RequestMapping(value = "save", method = RequestMethod.POST)
+    public String save(CarUser carUser, Model model, RedirectAttributes redirectAttributes) {
+        BaseResult baseResult = carUserService.save(carUser);
+        // 由返回的状态码来判断是否保存成功
+        if(baseResult.getStatus() == BaseResult.STATUS_SUCCESS) {
+            redirectAttributes.addFlashAttribute("baseResult", baseResult);
+            return "redirect:/user/list";
+        } else {
+            model.addAttribute("baseResult",baseResult);
+            return "user_form";
+        }
+    }
 
     //分页
     @ResponseBody

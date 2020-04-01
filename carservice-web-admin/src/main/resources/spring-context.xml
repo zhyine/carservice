@@ -9,11 +9,11 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!-- 配置 Bean Validator 定义 -->
-<!--    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>-->
-<!--    <bean id="beanValidator" class="com.myshop.commons.validator.BeanValidator">-->
-<!--        <property name="validator" ref="validator" />-->
-<!--    </bean>-->
+<!--     配置 Bean Validator 定义 -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+    <bean id="beanValidator" class="com.carservice.commons.validator.BeanValidator">
+        <property name="validator" ref="validator" />
+    </bean>
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

@@ -2,6 +2,7 @@ package com.carservice.web.admin.service.impl;
 
 import com.carservice.commons.dto.BaseResult;
 import com.carservice.commons.dto.PageInfo;
+import com.carservice.commons.validator.BeanValidator;
 import com.carservice.domain.CarUser;
 import com.carservice.web.admin.dao.CarUserDao;
 import com.carservice.web.admin.service.CarUserService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +51,23 @@ public class CarUserServiceImpl implements CarUserService {
     //保存用户信息
     @Override
     public BaseResult save(CarUser carUser) {
-        return null;
+        String validator = BeanValidator.validator(carUser);
+        //验证不通过
+        if(validator != null) {
+            return BaseResult.fail(validator);
+        } else {
+            carUser.setUpdated(new Date());
+            // 判断是否是新增用户
+            if(carUser.getId() == null) {
+                carUser.setPassword(DigestUtils.md5DigestAsHex(carUser.getPassword().getBytes()));
+                carUser.setCreated(new Date());
+                carUserDao.insert(carUser);
+            } else {
+                carUserDao.update(carUser);
+            }
+            return BaseResult.success("保存用户信息");
+        }
+
     }
 
     //删除用户信息

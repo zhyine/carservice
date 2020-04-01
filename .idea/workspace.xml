@@ -7,33 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486fef15-07fc-44f4-b951-a93e703063f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-domain/src/main/java/com/carservice/domain/CarUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-domain/src/main/java/com/carservice/domain/CarUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-domain/target/classes/com/carservice/domain/CarUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-domain/target/classes/com/carservice/domain/CarUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/CarUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/CarUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/mapper/CarUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/mapper/CarUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/CarUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/CarUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/spring-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/mapper/CarUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/mapper/CarUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/nav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/web/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/web/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/spring-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/CarUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/CarUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/mapper/CarUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/mapper/CarUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/web/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/web/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/spring-context.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -242,6 +231,7 @@
       <workItem from="1585634745971" duration="2698000" />
       <workItem from="1585637560070" duration="545000" />
       <workItem from="1585711725055" duration="2784000" />
+      <workItem from="1585729900954" duration="3207000" />
     </task>
     <servers />
   </component>
