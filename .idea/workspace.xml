@@ -7,16 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486fef15-07fc-44f4-b951-a93e703063f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/956b0623-5bb6-4551-95ef-8faaa8e7a3ce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/956b0623-5bb6-4551-95ef-8faaa8e7a3ce.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/user_form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/user_form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/user_form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/user_form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/nav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/web/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/web/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/nav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/web/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/web/controller/UserController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,6 +227,7 @@
       <workItem from="1585797290405" duration="4978000" />
       <workItem from="1585806412885" duration="26000" />
       <workItem from="1585806600610" duration="313000" />
+      <workItem from="1585807734796" duration="4609000" />
     </task>
     <servers />
   </component>

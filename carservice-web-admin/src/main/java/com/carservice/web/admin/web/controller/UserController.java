@@ -53,7 +53,7 @@ public class UserController {
     }
 
     /**
-     * 批量删除用户信息
+     * 删除用户信息
      * @param ids
      */
     @ResponseBody
@@ -68,6 +68,12 @@ public class UserController {
             baseResult = BaseResult.fail("删除用户失败");
         }
 
+    }
+
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/";
     }
 
     @RequestMapping(value = "detail", method = RequestMethod.GET)
