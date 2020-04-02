@@ -41,11 +41,17 @@ Java版本：1.8<br>
 
 #### 1：各模块之间的关系
 
-- `dependencies`模块管理所有模块的依赖，所以无论是`commons`,`domain`，`admin`，`api`，`ui`模块都需要继承于`dependencies`模块。所以在除了`dependencies`模块外的所有模块的`pom`都需要继承父类`pom`文件。
-- <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172543.png" style="zoom:50%;" />
-- 因为`commons`，`domain`模块，里面封装了一些工具类，工具类在其他模块中需要被调用，所以我们应该把这两个模块打包成`jar`然后把`jar`包根据需要引入`admin`，`api`，`ui`模块。
-- <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172940.png" style="zoom: 50%;" />![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330173020.png)
-- <img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330173020.png" style="zoom:50%;" />
+> `dependencies`模块管理所有模块的依赖，所以无论是`commons`,`domain`，`admin`，`api`，`ui`模块都需要继承于`dependencies`模块。所以在除了`dependencies`模块外的所有模块的`pom`都需要继承父类`pom`文件。
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172543.png" style="zoom:50%;" />
+
+> 因为`commons`，`domain`模块，里面封装了一些工具类，工具类在其他模块中需要被调用，所以我们应该把这两个模块打包成`jar`然后把`jar`包根据需要引入`admin`，`api`，`ui`模块。
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330172940.png" style="zoom: 50%;" />
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330173020.png)
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200330173020.png" style="zoom:50%;" />
 
 > 2020/3/28
 
@@ -205,4 +211,151 @@ Java版本：1.8<br>
 
 #### 后端-用户模块-CRUD
 
-> 
+> 这时候考虑到数据库的增删改查大同小异，所以我在这里直接把**Dao层**所需要的接口全部列出。***Server层和Dao层基本一样不过多说***
+>
+> CRUD的SQL语句也不过多说
+>
+> ```java
+> // 通过邮箱登录
+> public CarUser getByEmail(String email);
+> // 查询全部信息
+> public List<CarUser> selectAll();
+> // 新增用户
+> public void insert(CarUser carUser);
+> //根据id删除用户
+> public void delete(Long id);
+> // 根据id查询用户信息
+> public CarUser getById(Long id);
+> // 更新用户
+> public void update(CarUser carUser);
+> // 批量删除
+> public void deleteMulti(String[] ids);
+> // 分页查询
+> public List<CarUser> page(Map<String,Object> params);
+> // 查询总笔数
+> public int count(CarUser carUser);`
+> ```
+
+> 现在我们来实现**增删改查**操作
+>
+> 1：增加一个用户
+>
+> 首先，我们要需要一个**表单页**来让用户来填写信息，之后将**用户提交表单**，这时候我我们**Controller层接收到信息**调用相应的**Service层**来处理逻辑，**Service层**再调用**Dao层**来向数据库中插入一条记录。
+
+> 建立表单页面`user_form.jsp`，填写完表单信息后，点击提交发送请求`/user/save`。
+>
+> 这时候`Controller层`监听到了，调用**Service**层的来保存信息。
+>
+> 这时候需要判断**你填写的这个邮箱对应的`id`在数据库中存在不存在**，如果存在的情况下，就是**更新用户信息**；如果不存在的情况下，就是**新增一个用户**。
+>
+> 注意：**我们数据库里面的密码不是以明文的形式显示的**，所以需要将密码加密。
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401212132.png)
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401212918.png)
+
+> 再用户填写表单的时候，**如何来判断表单信息是否正确呢**，所以我们需要进行验证
+>
+> 前端使用的是**Jquery Validdation**插件来进行验证
+>
+> 后端使用的**Spring-Validation+正则表达式**来进行验证
+>
+> 因为**Spring-Validation**继承的是**hibernate-validation**所以需要先导入**hibernate-validation**
+>
+> 但是对于**手机号和邮箱**怎么进行验证呢？
+>
+> 在这里需要你自己去指定验证规则，也就是所谓的**正则表达式**
+>
+> ```java
+> // 规定用户名，也就是邮箱，长度6-20
+> @Length(min = 6, max = 20, message = "姓名长度必须介于6-20位之间")
+> // 这里我在封装了一个工具类RegexpUtils，在里面有手机号和邮箱的验证规则
+> // 自定义手机号验证规则
+> @Pattern(regexp = RegexpUtils.PHONE, message = "手机号格式不正确")
+> ```
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401213321.png)
+
+> 接下来是制定的验证规则，在`commons`模块下的`utils`包下
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401213753.png)
+
+> 接下来应该考虑到，**管理员如何知道你这条数据插入成功了还是失败了**
+>
+> 所以，我们是不是**无论插入成功还是失败都应该在前端显示一个警告框**，这样让管理员来知道是否插入成功。
+>
+> 那么如何来判断是否插入成功呢？
+>
+> 这时候还需要考虑到，**不仅仅是新增用户的时候，比如：删除用户的时候，更新用户信息的时候......这些时候都需要考虑到`提示的重要性`**
+>
+> 所以，我在这里封装了一个类`BaseResult`，专门用来判断是否插入成功，删除成功等等
+>
+> 这里用到**封装，继承，多态这些特性**。因为操作都是在浏览器上进行的，所以利用**成功的状态码为200，失败的状态码为500**，来判断这些操作是否成功。成功的话那么在提示框中应该显示成功，失败亦然。
+>
+> 但是考虑到不同操作提示的信息也不一样，所以**需要传入一个参数`message`**，这时候`message`就可以动态的改变了。
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401214417.png)
+
+> 那么此时回到`Controller层`，我们应该来**通过状态码来判断以下是否插入成功**
+>
+> 如果插入成功的话，页面就应该重定向到我们显示用户的那个页面，也就是`user_list.jsp`，并提示信息
+>
+> 如果不成功的话，就仍在此页面，并且提示`插入失败`类似的信息
+>
+> 之前已经说过了，**Controller层与页面之间信息传递是将信息保存在model内**
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401215024.png)
+
+> 这时候我们来到页面将提示信息来显示出来
+>
+> 这里需要用到**jstl**中的`c:if`语法
+>
+> 插入成功：成功的状态码为200，所以我们在`user_list.jsp`页面添加以下判断，当为状态200的时候，我们应该显示提示框，并将在`baseResult`中的动态`message`取出放在页面上。这里用了三目表达式是为了当插入成功的时候，这个提示框为绿色。
+>
+> 插入失败：插入失败的时候，页面仍在`user_form.jsp`所以需要在`user_form.jsp`上添加以下判断，道理都一样
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401215505.png)
+
+------
+
+> 上面增加用户的已经完成了，接下来来实现**更新用户信息**
+>
+> 编辑用户信息需要考虑到**提高管理员的效率**，所以当用户管理在点击编辑的时候，我们应该将一些信息自动填写到表单内部，类似下图
+>
+> **编辑需要的表单和新增的表单因为具有共性**，所以依旧使用新增用户的表单来完成更新用户信息的功能
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401220453.png)
+
+> 点击**编辑按钮**后，跳转到`user_form.jsp`这个页面，只需要在那个按钮外部加上一个`<a></a>`标签即可
+>
+> 那么如何将信息自动填入到表单内呢？
+>
+> 其实，对于每一个编辑按钮，都有一个对应的`id`，这个`id`就是数据库中这条数据的`id`
+>
+> 所以我们在发起请求的时候**需要把`id`也作为参数发送出去**
+>
+> **那么我们在点击按钮，跳转到`user_form.jsp`之前，就应该通过`id`来拿到这个`id`对应的全部信息**
+>
+> 如何实现呢？
+>
+> 这时候需要用到**Controller层**的一个注解：`@ModelAttribute`。其作用就是：**每次执行方法时都会先执行@ModelAttribute注解的方法，并将结果添加到model中。**
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401221355.png" style="zoom:50%;" />
+
+> 这时候我用一步步通过`Service层，Dao层`在加载`user_form.jsp`前拿到了对应的数据
+>
+> 数据拿到了，如何将数据放入表单中呢？
+>
+> 不妨先试着给原始的`user_form页面`对应的`url为：http://localhost:8080/user/form`加上参数试
+>
+> 先试着加上不同的参数`id`这时候`url`变为：`http://localhost:8080/user/form?id=`，会发现不同`id`对应的页面数据也是不一样的，所以我们传入的`id`应该是动态获取到的
+
+> 为什么页面能获取到信息呢？
+>
+> 因为在`user_form.jsp`中的使用的**<form : form></form : form>**标签
+>
+> 它的作用：它会自动绑定来自`Model`中的一个属性值到当前`form`对应的实体对象，这里对应的是`modelAttribute="carUser"`
+>
+> 另外通过隐藏域`<form : hidden path="id">`来判断是更新还是新增，因为，有了`MOdelAttribute`所以只需要给其传入一个`id`即可
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200401222825.png" style="zoom:50%;" />

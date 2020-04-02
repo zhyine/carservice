@@ -63,6 +63,7 @@ public class CarUserServiceImpl implements CarUserService {
                 carUser.setCreated(new Date());
                 carUserDao.insert(carUser);
             } else {
+                carUser.setPassword(DigestUtils.md5DigestAsHex(carUser.getPassword().getBytes()));
                 carUserDao.update(carUser);
             }
             return BaseResult.success("保存用户信息");

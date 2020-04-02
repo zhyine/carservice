@@ -12,7 +12,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>我的商城 | 用户管理</title>
+    <title>Car| 用户管理</title>
     <jsp:include page="../includes/header.jsp"></jsp:include>
 </head>
 <body class="hold-transition skin-black sidebar-mini">

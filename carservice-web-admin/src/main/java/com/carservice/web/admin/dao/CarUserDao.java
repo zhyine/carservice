@@ -39,7 +39,7 @@ public interface CarUserDao {
     public CarUser getById(Long id);
 
     /**
-     * 更新TbUser
+     * 更新用户
      * @param carUser
      */
     public void update(CarUser carUser);
