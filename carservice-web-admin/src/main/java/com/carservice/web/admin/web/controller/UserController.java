@@ -58,7 +58,7 @@ public class UserController {
      */
     @ResponseBody
     @RequestMapping(value = "delete", method = RequestMethod.POST)
-    public void deleteMulti(String ids) {
+    public BaseResult deleteMulti(String ids) {
         BaseResult baseResult = null;
         if(StringUtils.isNotBlank(ids)) {
             String[] idArray = ids.split(",");
@@ -67,6 +67,8 @@ public class UserController {
         } else {
             baseResult = BaseResult.fail("删除用户失败");
         }
+
+        return baseResult;
 
     }
 

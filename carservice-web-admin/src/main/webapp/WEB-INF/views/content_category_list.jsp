@@ -57,7 +57,7 @@
 
                         <div class="box-body">
                             <a href="/content/category/form" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus"></i>新增</a>&nbsp;
-                            <button type="button" class="btn btn-sm btn-default"><i class="fa fa-trash"></i>删除</button>&nbsp;
+<%--                            <button type="button" class="btn btn-sm btn-default"><i class="fa fa-trash"></i>删除</button>&nbsp;--%>
                             <%--                            <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-upload"></i>导入</a>&nbsp;--%>
                             <%--                            <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-download"></i>导出</a>--%>
                         </div>
@@ -83,7 +83,7 @@
                                         <td>
                                             <a href="/content/category/form?id=${carContentCategory.id}" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit">编辑</i></a>&nbsp;
                                             <a href="/content/category/delete" type="button" class="btn btn-sm btn-danger"><i class="fa  fa-trash">删除</i></a>&nbsp;
-                                            <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus">新增下级菜单</i></a>&nbsp;
+<%--                                            <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus">新增下级菜单</i></a>&nbsp;--%>
                                         </td>
                                     </tr>
                                 </c:forEach>
