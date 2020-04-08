@@ -22,7 +22,7 @@ public class CarContentServiceImpl implements CarContentService {
 
     @Override
     public void deleteByCategory(String[] categoryIds) {
-
+        carContentDao.deleteByCategory(categoryIds);
     }
 
     @Override

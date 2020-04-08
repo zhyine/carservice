@@ -46,6 +46,7 @@ public class CarContentCategoryServiceImpl implements CarContentCategoryService 
         if (validator != null) {
             return BaseResult.fail(validator);
         } else {
+
             Long parentId = carContentCategory.getParentId();
             // 如果没有选择父级节点则默认设置为根目录
             if (parentId == null) {
@@ -96,7 +97,7 @@ public class CarContentCategoryServiceImpl implements CarContentCategoryService 
         String[] categoryIds = targetArray.toArray(new String[targetArray.size()]);
 
         //删除类目及其子类目
-        carContentCategoryDao.delete1(categoryIds);
+        carContentCategoryDao.delete(categoryIds);
 
         //删除类目下的所有内容
         carContentervice.deleteByCategory(categoryIds);

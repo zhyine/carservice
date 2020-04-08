@@ -15,7 +15,7 @@ public interface CarContentCategoryDao {
      */
     public List<CarContentCategory> selectByPid(Long pid);
 
-    public void delete1(String[] categoryIds);
+    public void delete(String[] categoryIds);
 
     /**
      * 查询全部信息
@@ -33,7 +33,7 @@ public interface CarContentCategoryDao {
      * 根据id删除
      * @param id
      */
-    public void delete(Long id);
+    public void delete1(Long id);
 
     /**
      * 根据id查询用户信息

@@ -1,6 +1,7 @@
 package com.carservice.web.admin.web.controller;
 
 import com.carservice.commons.dto.BaseResult;
+import com.carservice.domain.CarContent;
 import com.carservice.domain.CarContentCategory;
 import com.carservice.web.admin.service.CarContentCategoryService;
 import org.apache.commons.lang3.StringUtils;
@@ -31,7 +32,6 @@ public class ContentCategoryController {
         } else {
             carContentCategory = new CarContentCategory();
         }
-
         return carContentCategory;
     }
 
@@ -86,6 +86,7 @@ public class ContentCategoryController {
 
         return baseResult;
     }
+
     /**
      * 排序
      * @param sourceList 排序前集合

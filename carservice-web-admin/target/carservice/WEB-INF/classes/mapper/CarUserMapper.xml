@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.carservice.web.admin.dao.CarUserDao">
+    <!-- 封装的共有sql片段 -->
+    <sql id="carUserColumns">
+        a.id,
+        a.username,
+        a.password,
+        a.phone,
+        a.email,
+        a.created,
+        a.updated
+    </sql>
+
+    <!-- 登录 -->
+    <select id="getByEmail" resultType="CarUser">
+        SELECT
+        <include refid="carUserColumns"/>
+        FROM
+        car_user AS a
+        WHERE
+        a.email = #{email}
+    </select>
+
+    <!-- 查询全部信息 -->
+    <select id="selectAll" resultType="CarUser">
+        SELECT
+        <include refid="carUserColumns"/>
+        FROM
+        car_user as a
+    </select>
+
+    <!--插入用户-->
+    <insert id="insert">
+        INSERT INTO car_user (
+        `username`,
+        `password`,
+        `phone`,
+        `email`,
+        `created`,
+        `updated`
+        )
+        values
+        (
+            #{username},
+            #{password},
+            #{phone},
+            #{email},
+            #{created},
+            #{updated}
+        )
+    </insert>
+
+    <!--删除用户信息-->
+    <delete id="delete">
+        DELETE FROM car_user WHERE id = #{id}
+    </delete>
+
+    <!--根据id查询-->
+    <select id="getById" resultType="CarUser">
+        SELECT
+        <include refid="carUserColumns"/>
+        FROM
+        car_user as a
+        WHERE
+        a.id = #{id}
+    </select>
+
+    <!--更新用户信息-->
+    <update id="update">
+        UPDATE
+            car_user
+        SET
+            username = #{username},
+            password = #{password},
+            phone = #{phone},
+            email = #{email},
+            updated = #{updated}
+        WHERE id = #{id}
+    </update>
+
+    <!--批量删除-->
+    <delete id="deleteMulti">
+        DELETE FROM car_user
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--分页-->
+    <select id="page" resultType="CarUser" parameterType="java.util.Map">
+        SELECT
+            <include refid="carUserColumns"/>
+        FROM
+            car_user AS a
+        <where>
+            <if test="carUser.username != null and carUser.username != ''">
+                AND a.username LIKE CONCAT('%',#{carUser.username},'%')
+            </if>
+            <if test="carUser.phone != null and carUser.phone != ''">
+                AND a.phone LIKE CONCAT('%',#{carUser.phone},'%')
+            </if>
+            <if test="carUser.email != null and carUser.email != ''">
+                AND a.email LIKE CONCAT('%',#{carUser.email},'%')
+            </if>
+        </where>
+            LIMIT #{start}, #{length}
+    </select>
+
+    <!--统计数量-->
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM car_user AS a
+        <where>
+            <if test="username != null and username != ''">
+                AND a.username LIKE CONCAT('%',#{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                AND a.phone LIKE CONCAT('%',#{phone},'%')
+            </if>
+            <if test="email != null and email != ''">
+                AND a.email LIKE CONCAT('%',#{email},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

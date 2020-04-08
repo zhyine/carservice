@@ -104,7 +104,12 @@ public class UserController {
         }
     }
 
-    //分页
+    /**
+     * 分页
+     * @param request
+     * @param carUser
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "page",method = RequestMethod.GET)
     public PageInfo<CarUser> page(HttpServletRequest request, CarUser carUser) {

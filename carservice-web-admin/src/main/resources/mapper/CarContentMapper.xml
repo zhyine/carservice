@@ -96,6 +96,14 @@
         </foreach>
     </delete>
 
+    <delete id="deleteByCategoryId">
+        DELETE FROM car_content
+        WHERE category_id IN
+        <foreach collection="array" open="(" close=")" separator="," item="categoryId">
+            #{categoryId}
+        </foreach>
+    </delete>
+
     <select id="page" resultType="CarContent" parameterType="java.util.Map">
         SELECT
             <include refid="carContentColumns" />

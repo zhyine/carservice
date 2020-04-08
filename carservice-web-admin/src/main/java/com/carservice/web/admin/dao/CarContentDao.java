@@ -58,4 +58,6 @@ public interface CarContentDao {
      */
     public int count(CarContent carContent);
 
+    public void deleteByCategory(String[] ids);
+
 }

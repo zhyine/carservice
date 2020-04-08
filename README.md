@@ -388,6 +388,30 @@ Java版本：1.8<br>
 
 ------
 
+#### 分页功能
+
+> 由于前端分页在数据量过大的时候会出现问题
+>
+> 所以我们这里使用后端分页的技术。
+>
+> 分页是在初始化加载表格数据的时候开始的。这里我们表格用的**dataTables**所以我在`app.js`里面封装了一个针对于`dataTables`的方法，需要页面传来一个分页的请求`url`和`dataTables`需要显示的列
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200404211236.png" style="zoom:50%;" />
+
+> 在`user_list.jsp`页面，我们需要把之前写的`table`里面的`<tbody>`标签里的内容删除，并且封装一个`columns`，在`columns`中使用了`DateTime`来格式化日期
+
+<img src="https://supers1.oss-cn-hangzhou.aliyuncs.com/20200404211358.png" style="zoom:67%;" />
+
+> `start`,`length`,`draw`是datatables传递的时候默认自带的
+>
+> ![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200404212457.png)
+>
+> 所以我们需要在Controller获得这三个参数并作判断，然后传给Service层
+
+![](https://supers1.oss-cn-hangzhou.aliyuncs.com/20200404212542.png)
+
+------
+
 > 接下来来实现**更新用户信息**
 >
 > 编辑用户信息需要考虑到**提高管理员的效率**，所以当用户管理在点击编辑的时候，我们应该将一些信息自动填写到表单内部，类似下图
