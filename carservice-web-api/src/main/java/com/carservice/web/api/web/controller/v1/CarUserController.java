@@ -33,4 +33,14 @@ public class CarUserController {
             return BaseResult.success("成功", dto);
         }
     }
+
+    /**
+     * 注册
+     * @param carUser
+     */
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    public BaseResult register(CarUser carUser) {
+        BaseResult baseResult = carUserService.register(carUser);
+        return baseResult;
+    }
 }

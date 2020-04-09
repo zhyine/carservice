@@ -1,5 +1,6 @@
 package com.carservice.commons.utils;
 
+import com.carservice.commons.dto.BaseResult;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -249,6 +250,7 @@ public class MapperUtils {
     public static <T> T obj2pojo(Object obj, Class<T> clazz) {
         return objectMapper.convertValue(obj, clazz);
     }
+
 }
 
 

@@ -35,6 +35,7 @@
     <httpclient.version>4.5.5</httpclient.version>
     <kaptcha.version>2.3</kaptcha.version>
     <commons-email.version>1.5</commons-email.version>
+    <json.version>20160810</json.version>
   </properties>
 
   <dependencyManagement>
@@ -183,6 +184,12 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-email</artifactId>
         <version>${commons-email.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>${json.version}</version>
       </dependency>
 
     </dependencies>

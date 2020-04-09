@@ -56,6 +56,11 @@
     </dependency>
 
     <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>com.google.code.kaptcha</groupId>
       <artifactId>kaptcha</artifactId>
     </dependency>

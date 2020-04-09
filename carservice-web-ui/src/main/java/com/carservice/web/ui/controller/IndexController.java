@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -26,5 +27,11 @@ public class IndexController {
     private void requestContentsPPT(Model model) {
         List<CarContent> carContents = ContentsApi.ppt();
         model.addAttribute("ppt", carContents);
+    }
+
+    @RequestMapping(value = "logout",method = RequestMethod.GET)
+    public String logout(HttpServletRequest httpServletRequest){
+        httpServletRequest.getSession().invalidate();
+        return "redirect:index";
     }
 }

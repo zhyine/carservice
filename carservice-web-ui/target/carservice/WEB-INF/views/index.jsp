@@ -29,7 +29,12 @@
 
                             </ul>
                             <ul class="top-log list-inline">
-                                <li><i class="fa fa-lock"></i><a href="login.html">登录</a> / </li><li><a href="register.html">注册</a></li>
+                                <c:if test="${carUser != null}">
+                                    <li>${carUser.username}欢迎回来&nbsp;&nbsp;<a href="/logout" style="color: red">注销！</a></li>
+                                </c:if>
+                                <c:if test="${carUser == null}">
+                                    <li><i class="fa fa-lock"></i><a href="/login">登录</a> / </li><li><a href="/register">注册</a></li>
+                                </c:if>
                             </ul>
                         </div>
                     </div>
@@ -41,7 +46,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                             <div class="logo">
-                                <a href="index.html"><img src="/static/image/catalog/logo.png" title="Your Store" alt="Your Store" /></a>
+                                <a href="/index"><img src="/static/image/catalog/logo.png" title="Your Store" alt="Your Store" /></a>
                             </div>
 
                         </div>
@@ -62,7 +67,7 @@
                                                 </p>
 
                                                 <span class="total-shopping-cart cart-total-full">
-                                            <span class="items_cart">02</span><span class="items_cart2"> item(s)</span><span class="items_carts">$162.00</span>
+<%--                                            <span class="items_cart">02</span><span class="items_cart2"> item(s)</span><span class="items_carts">$162.00</span>--%>
                                             </span>
                                             </div>
                                         </div>
@@ -75,28 +80,10 @@
                                                 <tr>
                                                     <td class="text-center" style="width:70px">
                                                         <a href="product.html">
-                                                            <img src="/static/image/catalog/demo/product/80/1.jpg" style="width:70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
-                                                        </a>
-                                                    </td>
-                                                    <td class="text-left"> <a class="cart_product_name" href="product.html">Yutculpa ullamco</a>
-                                                    </td>
-                                                    <td class="text-center">x1</td>
-                                                    <td class="text-center">$80.00</td>
-                                                    <td class="text-right">
-                                                        <a href="product.html" class="fa fa-edit"></a>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="width:70px">
-                                                        <a href="product.html">
                                                             <img src="/static/image/catalog/demo/product/80/2.jpg" style="width:70px" alt="Xancetta bresao" title="Xancetta bresao" class="preview">
                                                         </a>
                                                     </td>
-                                                    <td class="text-left"> <a class="cart_product_name" href="product.html">Xancetta bresao</a>
-                                                    </td>
+                                                    <td class="text-left"> <a class="cart_product_name" href="product.html">Xancetta bresao</a></td>
                                                     <td class="text-center">x1</td>
                                                     <td class="text-center">$60.00</td>
                                                     <td class="text-right">
@@ -114,19 +101,19 @@
                                                 <table class="table table-bordered">
                                                     <tbody>
                                                     <tr>
-                                                        <td class="text-left"><strong>Sub-Total</strong>
+                                                        <td class="text-left"><strong>商品</strong>
                                                         </td>
-                                                        <td class="text-right">$140.00</td>
+                                                        <td class="text-right">￥140.00</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="text-left"><strong>Eco Tax (-2.00)</strong>
+                                                        <td class="text-left"><strong>包装</strong>
                                                         </td>
-                                                        <td class="text-right">$2.00</td>
+                                                        <td class="text-right">￥5.00</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="text-left"><strong>VAT (20%)</strong>
+                                                        <td class="text-left"><strong>运费</strong>
                                                         </td>
-                                                        <td class="text-right">$20.00</td>
+                                                        <td class="text-right">￥20.00</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-left"><strong>Total</strong>
@@ -135,7 +122,7 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
-                                                <p class="text-right"> <a class="btn view-cart" href="cart.html"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout.html"><i class="fa fa-share"></i>Checkout</a>
+                                                <p class="text-right"> <a class="btn view-cart" href="/cart"><i class="fa fa-shopping-cart"></i>购物车</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="/checkout"><i class="fa fa-share"></i>付款</a>
                                                 </p>
                                             </div>
                                         </li>
@@ -301,12 +288,14 @@
                         <!-- Extra Best seller -->
                         <div class="module extra-layout1">
                             <div class="pre_text">
-                                Top sale in the week
+                                本周热销榜
                             </div>
-                            <h3 class="modtitle"><span>Best Seller</span></h3>
+                            <h3 class="modtitle"><span>热销产品</span></h3>
                             <div class="modcontent">
                                 <div id="so_extra_slider_11" class="so-extraslider button-type1">
                                     <div class="products-list yt-content-slider extraslider-inner" data-rtl="yes" data-pagination="no" data-arrows="no" data-autoplay="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column00="4" data-items_column0="4" data-items_column1="3" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-lazyload="yes" data-loop="no" data-buttonpage="top">
+
+
                                         <div class="item">
                                             <div class="product-layout product-grid">
                                                 <div class="product-item-container item--static">
@@ -317,7 +306,7 @@
                                                                 <img src="/static/image/catalog/demo/product/270/2.jpg" class="img-2 img-responsive" alt="image2">
                                                             </a>
                                                         </div>
-                                                        <span class="label-product label-new">New </span>
+                                                        <span class="label-product label-new">新品 </span>
                                                         <!--quickview-->
                                                         <div class="so-quickview">
                                                             <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-search"></i><span>Quick view</span></a>
@@ -329,7 +318,7 @@
 
                                                             <button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');"><i class="fa fa-heart"></i></button>
                                                             <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');">
-                                                                <span>Add to cart </span>
+                                                                <span>加入购物车 </span>
                                                             </button>
                                                             <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');"><i class="fa fa-refresh"></i></button>
                                                         </div>
@@ -346,6 +335,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="product-layout product-grid">
                                                 <div class="product-item-container item--static">
                                                     <div class="left-block">
@@ -384,6 +374,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         <div class="item">
                                             <div class="product-layout product-grid">
                                                 <div class="product-item-container item--static">

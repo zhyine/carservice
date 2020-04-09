@@ -11,5 +11,4 @@ public class CarUser implements Serializable {
     private String password;
     private String phone;
     private String email;
-    private String verification;
 }
