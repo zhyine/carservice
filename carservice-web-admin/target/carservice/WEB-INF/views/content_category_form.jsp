@@ -54,8 +54,8 @@
                                     <label class="col-sm-2 control-label">父级节点</label>
 
                                     <div class="col-sm-10">
-                                        <form:hidden id="parentId" path="parent.id"/>
-                                        <input id="parentName" class="form-control" placeholder="请选择" readonly="true" data-toggle="modal" data-target="#modal-default" value="${carContentCategory.parent.name}" />
+                                        <form:hidden id="parentId" path="parentId"/>
+                                        <input id="parentName" class="form-control" placeholder="请选择" readonly="true" data-toggle="modal" data-target="#modal-default" value="${carContentCategory.name}" />
 
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>我的商城 | 控制面板</title>
+    <title>Car | 控制面板</title>
     <jsp:include page="../includes/header.jsp"></jsp:include>
 </head>
 <body class="hold-transition skin-black sidebar-mini">
