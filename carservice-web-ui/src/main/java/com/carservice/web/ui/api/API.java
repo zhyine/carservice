@@ -12,4 +12,18 @@ public class API {
 
     // 会员管理接口 - 注册
     public static final String API_USERS_REGISTER = HOST + "/users/register";
+
+    //内容查询接口 - 热门商品 - 第一列
+    public static final String API_CONTENTS_TOP1 = HOST + "/contents/102";
+
+    //内容查询接口 - 热门商品 - 第二列
+    public static final String API_CONTENTS_TOP2 = HOST + "/contents/103";
+
+    //内容查询接口 - 热门商品 - 第三列
+    public static final String API_CONTENTS_TOP3 = HOST + "/contents/104";
+
+    //内容查询接口 - 热门商品 - 第四列
+    public static final String API_CONTENTS_TOP4 = HOST + "/contents/105";
+
+
 }

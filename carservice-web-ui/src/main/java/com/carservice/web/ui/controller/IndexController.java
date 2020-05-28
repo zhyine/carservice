@@ -17,7 +17,21 @@ public class IndexController {
     public String index(Model model){
         // 请求幻灯片
         requestContentsPPT(model);
+        requestContentsTop1(model);
+        requestContentsTop2(model);
+        requestContentsTop3(model);
+        requestContentsTop4(model);
         return "index";
+    }
+
+    @RequestMapping(value = "quickView", method = RequestMethod.GET)
+    public String quickView() {
+        return "quickView";
+    }
+
+    @RequestMapping(value = "cart", method = RequestMethod.GET)
+    public String cart() {
+        return "cart";
     }
 
     /**
@@ -28,6 +42,28 @@ public class IndexController {
         List<CarContent> carContents = ContentsApi.ppt();
         model.addAttribute("ppt", carContents);
     }
+
+    /**
+     * 请求热门内容
+     * @param model
+     * @return
+     */
+    private void requestContentsTop1(Model model) {
+        List<CarContent> carContents = ContentsApi.top1();
+        model.addAttribute("top1", carContents);
+    }
+    private void requestContentsTop2(Model model) {
+        List<CarContent> carContents = ContentsApi.top2();
+        model.addAttribute("top2", carContents);
+    }
+    private void requestContentsTop3(Model model) {
+        List<CarContent> carContents = ContentsApi.top3();
+        model.addAttribute("top3", carContents);
+    }private void requestContentsTop4(Model model) {
+        List<CarContent> carContents = ContentsApi.top4();
+        model.addAttribute("top4", carContents);
+    }
+
 
     @RequestMapping(value = "logout",method = RequestMethod.GET)
     public String logout(HttpServletRequest httpServletRequest){

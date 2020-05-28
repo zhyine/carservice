@@ -99,11 +99,11 @@ public class ContentCategoryController {
                 targetList.add(carContentCategory);
 
                 //判断是否有子节点,递归
-                if(carContentCategory.getIsParent()) {
-                    for (CarContentCategory contentCategory : sourceList) {
-                        if(contentCategory.getParentId().equals(carContentCategory.getId())) {
-                            sortList(sourceList, targetList, carContentCategory.getId());
-                            break;
+                            if(carContentCategory.getIsParent()) {
+                                for (CarContentCategory contentCategory : sourceList) {
+                                    if(contentCategory.getParentId().equals(carContentCategory.getId())) {
+                                        sortList(sourceList, targetList, carContentCategory.getId());
+                                        break;
                         }
                     }
                 }

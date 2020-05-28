@@ -7,6 +7,7 @@ import com.carservice.web.ui.dto.CarContent;
 import java.util.List;
 
 public class ContentsApi {
+    // 请求首页大广告
     public static List<CarContent> ppt() {
         List<CarContent> carContents = null;
         String result = HttpClientUtils.doGet(API.API_CONTENTS_PPT);
@@ -17,4 +18,49 @@ public class ContentsApi {
         }
         return carContents;
     }
+    //请求热门商品第一列
+    public static List<CarContent> top1() {
+        List<CarContent> carContents = null;
+        String result = HttpClientUtils.doGet(API.API_CONTENTS_TOP1);
+        try {
+            carContents = MapperUtils.json2listByTree(result, "data", CarContent.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return carContents;
+    }
+    //请求热门商品第一列
+    public static List<CarContent> top2() {
+        List<CarContent> carContents = null;
+        String result = HttpClientUtils.doGet(API.API_CONTENTS_TOP2);
+        try {
+            carContents = MapperUtils.json2listByTree(result, "data", CarContent.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return carContents;
+    }
+    //请求热门商品第一列
+    public static List<CarContent> top3() {
+        List<CarContent> carContents = null;
+        String result = HttpClientUtils.doGet(API.API_CONTENTS_TOP3);
+        try {
+            carContents = MapperUtils.json2listByTree(result, "data", CarContent.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return carContents;
+    }
+    //请求热门商品第一列
+    public static List<CarContent> top4() {
+        List<CarContent> carContents = null;
+        String result = HttpClientUtils.doGet(API.API_CONTENTS_TOP4);
+        try {
+            carContents = MapperUtils.json2listByTree(result, "data", CarContent.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return carContents;
+    }
+
 }
