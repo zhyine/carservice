@@ -25,5 +25,8 @@ public class API {
     //内容查询接口 - 热门商品 - 第四列
     public static final String API_CONTENTS_TOP4 = HOST + "/contents/105";
 
+    //商品查询接口
+    public static final String API_CONTENTS_GOODS = HOST + "/goods/5";
+
 
 }

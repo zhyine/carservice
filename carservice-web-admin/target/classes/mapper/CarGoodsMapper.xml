@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.carservice.web.admin.dao.CarGoodsDao">
+    <!-- 封装的共有sql片段 -->
+    <sql id="carGoodsColumns">
+        a.id,
+        a.name,
+        a.prices,
+        a.desc,
+        a.pic,
+        a.created,
+        a.updated
+    </sql>
+
+    <!-- 查询全部信息 -->
+    <select id="selectAll" resultType="CarGoods">
+        SELECT
+        <include refid="carGoodsColumns"/>
+        FROM
+        car_goods as a
+    </select>
+
+    <!--根据id查询-->
+    <select id="getById" resultType="CarGoods">
+        SELECT
+        <include refid="carGoodsColumns"/>
+        FROM
+        car_goods as a
+        WHERE
+        a.id = #{id}
+    </select>
+
+    <!--插入用户-->
+    <insert id="insert">
+        INSERT INTO car_goods (
+        `name`,
+        `prices`,
+        `desc`,
+        `pic`,
+        `created`,
+        `updated`
+        )
+        values
+        (
+            #{name},
+            #{prices},
+            #{desc},
+            #{pic},
+            #{created},
+            #{updated}
+        )
+    </insert>
+
+    <!--删除用户信息-->
+    <delete id="delete">
+        DELETE FROM car_goods WHERE id = #{id}
+    </delete>
+
+    <!--更新用户信息-->
+    <update id="update">
+        UPDATE
+            car_goods
+        SET
+            `name` = #{name},
+            `prices` = #{prices},
+            `desc` = #{desc},
+            `pic` = #{pic},
+            `updated` = #{updated}
+        WHERE id = #{id}
+    </update>
+
+    <!--批量删除-->
+    <delete id="deleteMulti">
+        DELETE FROM car_goods
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--分页-->
+    <select id="page" resultType="CarGoods" parameterType="java.util.Map">
+        SELECT
+        <include refid="carGoodsColumns"/>
+        FROM
+        car_goods AS a
+        <where>
+            <if test="carGoods != null and carGoods != ''">
+                <if test="carGoods.name != null and carGoods.name != ''">
+                    AND a.name LIKE CONCAT('%',#{carGoods.name},'%')
+                </if>
+                <if test="carGoods.prices != null and carGoods.prices != ''">
+                    AND a.prices LIKE CONCAT('%',#{carGoods.prices},'%')
+                </if>
+                <if test="carGoods.desc != null and carGoods.desc != ''">
+                    AND a.desc LIKE CONCAT('%',#{carGoods.desc},'%')
+                </if>
+            </if>
+        </where>
+        LIMIT #{start}, #{length}
+    </select>
+
+    <!--统计数量-->
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM car_goods AS a
+        <where>
+            <if test="name != null and name != ''">
+                AND a.name LIKE CONCAT('%',#{name},'%')
+            </if>
+            <if test="prices != null and prices != ''">
+                AND a.prices LIKE CONCAT('%',#{prices},'%')
+            </if>
+            <if test="desc != null and desc != ''">
+                AND a.desc LIKE CONCAT('%',#{desc},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

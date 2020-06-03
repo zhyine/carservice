@@ -3,6 +3,7 @@ package com.carservice.web.ui.api;
 import com.carservice.commons.utils.HttpClientUtils;
 import com.carservice.commons.utils.MapperUtils;
 import com.carservice.web.ui.dto.CarContent;
+import com.carservice.web.ui.dto.CarGoods;
 
 import java.util.List;
 
@@ -61,6 +62,19 @@ public class ContentsApi {
             e.printStackTrace();
         }
         return carContents;
+    }
+
+    public static List<CarGoods> goods() {
+        List<CarGoods> carGoods = null;
+        String result = HttpClientUtils.doGet(API.API_CONTENTS_GOODS);
+        try {
+            carGoods = MapperUtils.json2listByTree(result, "data", CarGoods.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("---------------------------------------");
+        System.out.println(carGoods);
+        return carGoods;
     }
 
 }

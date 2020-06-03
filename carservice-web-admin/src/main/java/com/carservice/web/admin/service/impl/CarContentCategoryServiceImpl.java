@@ -97,7 +97,7 @@ public class CarContentCategoryServiceImpl implements CarContentCategoryService 
         String[] categoryIds = targetArray.toArray(new String[targetArray.size()]);
 
         //删除类目及其子类目
-        carContentCategoryDao.delete(categoryIds);
+        carContentCategoryDao.delete1(categoryIds);
 
         //删除类目下的所有内容
         carContentervice.deleteByCategory(categoryIds);

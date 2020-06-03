@@ -7,35 +7,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486fef15-07fc-44f4-b951-a93e703063f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-commons/src/main/java/com/carservice/commons/persistence/BaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-commons/src/main/java/com/carservice/commons/persistence/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-commons/target/classes/com/carservice/commons/persistence/BaseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-commons/target/classes/com/carservice/commons/persistence/BaseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-domain/src/main/java/com/carservice/domain/CarGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-domain/target/classes/com/carservice/domain/CarGoods.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarGoodsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/CarGoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarGoodsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/GoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/resources/mapper/CarGoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/goods_detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/goods_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/views/goods_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarGoodsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/CarGoodsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarGoodsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/web/controller/GoodsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/mapper/CarGoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/goods_detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/goods_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/views/goods_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/1daa34c8-319f-4844-9337-e55853a414aa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/277193bc-2380-44b9-bf13-69d3213e2735.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/43f6cf60-9a62-47a3-9f9d-20e0f6f9de7a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/5fae3659-7679-498b-9175-8df1ea4210a9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/6f6ec277-eada-4715-b255-fdab0ec95c45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/b8d17145-9f68-4352-8fa3-93b2e16fc0b7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/e17ddc67-f4d1-4086-a2c6-e2a8ce25180a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarGoodsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/CarGoodsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarGoodsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/web/controller/GoodsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/mapper/CarGoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/java/com/carservice/web/api/dao/CarGoodsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/java/com/carservice/web/api/service/CarGoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/java/com/carservice/web/api/service/impl/CarGoodsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/java/com/carservice/web/api/web/controller/v1/CarGoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/java/com/carservice/web/api/web/dto/CarGoodsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/src/main/resources/mapper/CarGoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/com/carservice/web/api/dao/CarGoodsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/com/carservice/web/api/service/CarGoodsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/com/carservice/web/api/service/impl/CarGoodsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/com/carservice/web/api/web/controller/v1/CarGoodsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/com/carservice/web/api/web/dto/CarGoodsDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/classes/mapper/CarGoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/com/carservice/web/api/dao/CarGoodsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/com/carservice/web/api/service/CarGoodsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/com/carservice/web/api/service/impl/CarGoodsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/com/carservice/web/api/web/controller/v1/CarGoodsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/com/carservice/web/api/web/dto/CarGoodsDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carservice-web-api/target/classes/mapper/CarGoodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/956b0623-5bb6-4551-95ef-8faaa8e7a3ce.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-commons/target/classes/com/carservice/commons/utils/HttpClientUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-commons/target/classes/com/carservice/commons/utils/HttpClientUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/ContentCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/web/controller/ContentCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarContentCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarContentCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarContentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarContentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/dao/CarUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/java/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/src/main/webapp/WEB-INF/includes/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarContentCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarContentCategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarContentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarContentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/dao/CarUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarContentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarContentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/includes/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-api/target/carservice/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/0f59448f-52c2-476e-8195-028c9e1c3433.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/4d670ee6-bdc7-407b-96f5-36e5f3609c50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/5f5fff60-b5fb-43c2-bf29-40e88e5aa654.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/68076a18-7489-498c-9ba8-4f69e4fe29c7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/6f7f2673-b496-4c55-bd00-46e80ab80953.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/7f44bb16-52d8-496c-a72e-f1e727ccfde1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/9cb75208-5e50-4952-8f51-dd3b0394b35c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/carservice/static/upload/cbc34360-68e9-4590-8ce9-8d04b3e5bb4f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarContentCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarContentCategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarContentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarContentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/dao/CarUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarContentCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarContentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarContentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-admin/target/classes/com/carservice/web/admin/service/impl/CarUserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-api/target/carservice/WEB-INF/lib/carservice-domain-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/api/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/api/ContentsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/api/ContentsApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/java/com/carservice/web/ui/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/WEB-INF/includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/WEB-INF/includes/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/static/js/themejs/addtocart.js" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/src/main/webapp/static/js/themejs/addtocart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/api/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/api/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/api/ContentsApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/api/ContentsApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/classes/com/carservice/web/ui/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/includes/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/lib/carservice-commons-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/carservice/static/js/themejs/addtocart.js" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/carservice/static/js/themejs/addtocart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/api/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/api/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/api/ContentsApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/api/ContentsApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/carservice-web-ui/target/classes/com/carservice/web/ui/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carservice.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +138,14 @@
         <item name="carservice" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="carservice: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="car_content: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="car_goods: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="carservice" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="carservice: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="car_user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -88,12 +158,12 @@
         <option value="spring-context" />
         <option value="MyBatis-config" />
         <option value="spring-mvc" />
-        <option value="Interface" />
         <option value="jsf" />
         <option value="XML.xml" />
+        <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Mybatis-mapper" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -127,7 +197,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -153,7 +223,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_carservice_2" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_carservice" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -161,7 +231,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="61233" />
+        <option name="DEBUG_PORT" value="51386" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -366,8 +436,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.carservice-web-admin" />
       <item itemvalue="Tomcat Server.carservice-web-api" />
+      <item itemvalue="Tomcat Server.carservice-web-admin" />
       <item itemvalue="Tomcat Server.carservice-web-ui" />
     </list>
   </component>
@@ -375,7 +445,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@38157f92" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -449,6 +524,15 @@
       <workItem from="1588130525125" duration="55000" />
       <workItem from="1589180888633" duration="5671000" />
       <workItem from="1590030763924" duration="5454000" />
+      <workItem from="1590661025026" duration="1463000" />
+      <workItem from="1591000873462" duration="1057000" />
+      <workItem from="1591080527795" duration="1555000" />
+      <workItem from="1591082104615" duration="213000" />
+      <workItem from="1591082332698" duration="168000" />
+      <workItem from="1591082642137" duration="3808000" />
+      <workItem from="1591086534915" duration="5951000" />
+      <workItem from="1591163822367" duration="8566000" />
+      <workItem from="1591189174265" duration="1664000" />
     </task>
     <servers />
   </component>

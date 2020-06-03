@@ -2,6 +2,7 @@ package com.carservice.web.ui.controller;
 
 import com.carservice.web.ui.api.ContentsApi;
 import com.carservice.web.ui.dto.CarContent;
+import com.carservice.web.ui.dto.CarGoods;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +18,13 @@ public class IndexController {
     public String index(Model model){
         // 请求幻灯片
         requestContentsPPT(model);
+        // 请求热门广告
         requestContentsTop1(model);
         requestContentsTop2(model);
         requestContentsTop3(model);
         requestContentsTop4(model);
+        // 请求商品
+        requestGoods(model);
         return "index";
     }
 
@@ -59,9 +63,15 @@ public class IndexController {
     private void requestContentsTop3(Model model) {
         List<CarContent> carContents = ContentsApi.top3();
         model.addAttribute("top3", carContents);
-    }private void requestContentsTop4(Model model) {
+    }
+    private void requestContentsTop4(Model model) {
         List<CarContent> carContents = ContentsApi.top4();
         model.addAttribute("top4", carContents);
+    }
+
+    private void requestGoods(Model model) {
+        List<CarGoods> carGoods = ContentsApi.goods();
+        model.addAttribute("goods", carGoods);
     }
 
 

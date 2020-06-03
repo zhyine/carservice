@@ -52,6 +52,19 @@
                 </ul>
             </li>
 
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-book"></i> <span>购物管理</span>
+                    <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/goods/list"><i class="fa fa-circle-o"></i> 商品列表</a></li>
+                    <li><a href="/cart/list"><i class="fa fa-circle-o"></i> 购物列表</a></li>
+                </ul>
+            </li>
+
         </ul>
     </section>
 </aside>
