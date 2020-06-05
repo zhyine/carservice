@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.carservice.web.admin.dao.CarCartDao">
+    <sql id="carCartColumns">
+        a.id,
+        a.user_id AS userId,
+        a.goods,
+        a.goods_desc AS goodsDesc,
+        a.pic,
+        a.prices,
+        a.nums,
+        a.created,
+        a.updated,
+        b.id AS "carUser.id",
+        b.username AS "carUser.username"
+    </sql>
+
+    <sql id="carCartJoins">
+         LEFT JOIN car_user AS b ON a.user_id = b.id
+    </sql>
+
+    <select id="getById" resultType="CarCart">
+        SELECT
+        <include refid="carCartColumns" />
+        FROM
+        car_cart as a
+        <include refid="carCartJoins" />
+        WHERE
+        a.id = #{id}
+    </select>
+
+    <select id="page" resultType="CarCart" parameterType="java.util.Map">
+        SELECT
+        <include refid="carCartColumns" />
+        FROM
+        car_cart as a
+        <include refid="carCartJoins" />
+        <where>
+            <if test="carCart.goods != null and carCart.goods != ''">
+                AND a.goods LIKE CONCAT('%',#{carCart.goods},'%')
+            </if>
+            <if test="carCart.goodsDesc != null and carCart.goodsDesc != ''">
+                AND a.goodsDesc LIKE CONCAT('%',#{carCart.goodsDesc},'%')
+            </if>
+            <if test="carCart.prices != null and carCart.prices != ''">
+                AND a.prices LIKE CONCAT('%',#{carCart.prices},'%')
+            </if>
+        </where>
+        LIMIT #{start}, #{length}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM car_cart AS a
+        <where>
+            <if test="goods != null and goods != ''">
+                AND a.goods LIKE CONCAT('%',#{goods},'%')
+            </if>
+            <if test="goodsDesc != null and goodsDesc != ''">
+                AND a.goodsDesc LIKE CONCAT('%',#{goodsDesc},'%')
+            </if>
+            <if test="prices != null and prices != ''">
+                AND a.prices LIKE CONCAT('%',#{prices},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

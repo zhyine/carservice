@@ -33,11 +33,6 @@ public class IndexController {
         return "quickView";
     }
 
-    @RequestMapping(value = "cart", method = RequestMethod.GET)
-    public String cart() {
-        return "cart";
-    }
-
     /**
      * 请求轮播图
      * @param model

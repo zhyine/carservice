@@ -28,5 +28,6 @@ public class API {
     //商品查询接口
     public static final String API_CONTENTS_GOODS = HOST + "/goods/5";
 
-
+    //购物车查询接口
+    public static final String API_CONTENTS_CART1= HOST + "/carts/1";
 }

@@ -268,7 +268,7 @@
                         <tr>
                             <td class="text-center">商品图片</td>
                             <td class="text-left">商品名称</td>
-                            <td class="text-left">模型</td>
+                            <td class="text-left">商品描述</td>
                             <td class="text-left">数量</td>
                             <td class="text-right">价格/个</td>
                             <td class="text-right">合计</td>
@@ -289,19 +289,21 @@
                             <td class="text-right">￥114.00</td>
                             <td class="text-right">￥114.00</td>
                         </tr>
-                        <tr>
-                            <td class="text-center"><a href="product.html"><img width="70px" src="image/catalog/demo/product/replacement/10.jpg" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
-                            <td class="text-left"><a href="product.html">车内挂件</a></td>
-                            <td class="text-left">Pt 002</td>
-                            <td class="text-left" width="200px"><div class="input-group btn-block quantity">
-                                <input type="text" name="quantity" value="2" size="2" class="form-control" />
+                        <c:forEach items="${cart1}" var="cart1">
+                            <tr>
+                                <td class="text-center"><a href="product.html"><img width="70px" src="${cart1.pic}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
+                                <td class="text-left"><a href="product.html">${cart1.goods}</a></td>
+                                <td class="text-left">${cart1.goodsDesc}</td>
+                                <td class="text-left" width="200px"><div class="input-group btn-block quantity">
+                                <input type="text" name="quantity" value="${cart1.nums}" size="2" class="form-control" />
                                 <span class="input-group-btn">
-                            <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-clone"></i></button>
-                            <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>
-                            </span></div></td>
-                            <td class="text-right">￥48.00</td>
-                            <td class="text-right">￥98.00</td>
-                        </tr>
+                                    <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-clone"></i></button>
+                                    <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>
+                                </span></div></td>
+                                <td class="text-right">￥${cart1.prices}</td>
+                                <td class="text-right">￥${cart1.prices}*${cart1.nums}</td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>

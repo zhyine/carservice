@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.carservice.web.api.dao.CarCartDao">
+    <sql id="carCartColumns">
+        a.id,
+        a.user_id AS userId,
+        a.goods,
+        a.goods_desc AS goodsDesc,
+        a.pic,
+        a.prices,
+        a.nums,
+        a.created,
+        a.updated,
+        b.id AS "carUser.id",
+        b.username AS "carUser.username"
+    </sql>
+
+    <sql id="carCartJoins">
+         LEFT JOIN car_user AS b ON a.user_id = b.id
+    </sql>
+
+    <select id="selectByUserId" resultType="CarCart">
+        SELECT
+        <include refid="carCartColumns"/>
+        FROM car_cart AS a
+        <include refid="carCartJoins"/>
+        WHERE a.user_id = #{carUser.id}
+    </select>
+</mapper>

@@ -21,7 +21,7 @@ public class PageInfo<T extends BaseEntity> implements Serializable {
     }
 
     public void setDraw(int draw) {
-        this.draw = draw;
+            this.draw = draw;
     }
 
     public int getRecordsTotal() {
