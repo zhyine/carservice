@@ -446,7 +446,7 @@
 
                                                                 <button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');"><i class="fa fa-heart"></i></button>
                                                                 <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');">
-                                                                    <span>加入购物车 </span>
+                                                                    <a href="/insert"><span>加入购物车 </span></a>
                                                                 </button>
                                                                 <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');"><i class="fa fa-refresh"></i></button>
                                                             </div>

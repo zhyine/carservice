@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="carservice-domain" />
         <module name="carservice-web-ui" />
         <module name="carservice-commons" />
-        <module name="carservice-domain" />
         <module name="carservice-web-admin" />
         <module name="carservice-web-api" />
       </profile>

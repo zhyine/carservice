@@ -35,6 +35,11 @@ public class CartController {
         return "cart_list";
     }
 
+    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    public String detail(CarCart carCart) {
+        return "cart_detail";
+    }
+
     @ResponseBody
     @RequestMapping(value = "page", method = RequestMethod.GET)
     public PageInfo<CarCart> page(HttpServletRequest request, CarCart carCart) {

@@ -17,10 +17,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>carservice</groupId>
-            <artifactId>carservice-domain</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
+        <groupId>carservice</groupId>
+        <artifactId>carservice-domain</artifactId>
+        <version>${project.parent.version}</version>
+    </dependency>
         <dependency>
             <groupId>carservice</groupId>
             <artifactId>carservice-commons</artifactId>
