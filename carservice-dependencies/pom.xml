@@ -32,7 +32,7 @@
     <hibernate-validator.version>6.0.17.Final</hibernate-validator.version>
     <commons-fileupload.version>1.3.2</commons-fileupload.version>
     <spring-aspects.version>5.1.9.RELEASE</spring-aspects.version>
-    <httpclient.version>4.5.5</httpclient.version>
+    <httpclient.version>4.5.13</httpclient.version>
     <kaptcha.version>2.3</kaptcha.version>
     <commons-email.version>1.5</commons-email.version>
     <json.version>20160810</json.version>
